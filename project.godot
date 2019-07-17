@@ -33,6 +33,11 @@ move_right={
  ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="entities"
+3d_physics/layer_2="bullets"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
