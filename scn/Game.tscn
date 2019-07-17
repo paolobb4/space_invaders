@@ -49,18 +49,21 @@ size = 40.0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
+[node name="enemies" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="Enemy1" parent="enemies" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25 )
 
-[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+[node name="Enemy2" parent="enemies" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -25 )
 
-[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+[node name="Enemy3" parent="enemies" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -25 )
 
-[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+[node name="Enemy4" parent="enemies" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -25 )
 
-[node name="Enemy5" parent="." instance=ExtResource( 3 )]
+[node name="Enemy5" parent="enemies" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -25 )
 
