@@ -1,5 +1,7 @@
 extends KinematicBody
 
+var Bullet = load("res://scn/Bullet.tscn")
+
 export var speed = 1    # unit per seccond
 
 
@@ -10,6 +12,13 @@ func _process(delta):
         move -= 1
     if Input.is_action_pressed("move_right"):
         move += 1
+
+    if Input.is_action_just_pressed("shoot"):
+        if ($"cooldown".time_left <= 0):
+            $"cooldown".start()
+            var b = Bullet.instance()
+            b.translation = $"gun".global_transform.origin
+            find_parent("Game").add_child(b)
 
 
     move_and_collide(Vector3(1,0,0) * move * speed * delta)
