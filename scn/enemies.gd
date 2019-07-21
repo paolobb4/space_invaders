@@ -5,23 +5,26 @@ extends Spatial
 
 export var speed = 1
 
-var last_state = "right"
-var state = "right"
+var direction = "left"
+var next_direction
 
-func _process(delta):
-    var move = Vector3()
 
-    match state:
-        "left":
-            translation.x -= speed * delta
-        "right":
-            translation.x += speed * delta
-        "forward":
-            pass
-
+func _ready():
+    $"AnimationPlayer".play("move_" + direction)
 
 func _on_limit_left_hit(a):
-    state = "right"
+    direction = "forward"
+    next_direction = "right"
 
 func _on_limit_right_hit(a):
-    state = "left"
+    direction = "forward"
+    next_direction = "left"
+
+func _on_animation_finished(animation_name):
+    self.translation += $"enemies".translation
+    $"enemies".translation = Vector3()
+
+    if animation_name == "move_forward":
+        direction = next_direction
+
+    $"AnimationPlayer".play("move_" + direction)
