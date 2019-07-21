@@ -3,7 +3,11 @@ extends Spatial
 # Possible states are: left, right, forward
 
 
-export var speed = 1
+export var initial_speed = 1.0
+export var max_speed_factor = 1.0
+
+onready var original_enemies_count = $"enemies".get_child_count()
+onready var speed_increment = initial_speed * (max_speed_factor - 1 ) / original_enemies_count
 
 var direction = "left"
 var next_direction
@@ -27,4 +31,6 @@ func _on_animation_finished(animation_name):
     if animation_name == "move_forward":
         direction = next_direction
 
-    $"AnimationPlayer".play("move_" + direction)
+    var speed = initial_speed + (original_enemies_count - $"enemies".get_child_count()) * speed_increment
+
+    $"AnimationPlayer".play("move_" + direction, -1, speed)
