@@ -12,7 +12,6 @@ albedo_color = Color( 0.8, 0.0705882, 0.0705882, 1 )
 points = PoolVector3Array( -1, 0.5, 1, 1, 0.5, -1, 1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, 1, -0.5, -1, 1, -0.5, 1, -1, -0.5, -1, 1, 0.5, 1, -1, 0.5, -1, 1, 0.5, -1, -1, 0.5, 1, 1, -0.5, 1, -1, -0.5, -1, 1, -0.5, -1, -1, -0.5, 1, 1, 0.5, 1, -1, -0.5, 1, -1, 0.5, 1, 1, -0.5, 1, 1, 0.5, -1, -1, -0.5, -1, -1, 0.5, -1, 1, -0.5, -1 )
 
 [node name="Enemy" type="Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023632, 0.0187271, 0.00580645 )
 collision_mask = 3
 script = ExtResource( 1 )
 
@@ -23,4 +22,24 @@ material/0 = SubResource( 2 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 3 )
 
+[node name="RayCast_front" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 50 )
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast_back" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, -50 )
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Timer_rand_shoot" type="Timer" parent="."]
+one_shot = true
+
+[node name="gun" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="timeout" from="Timer_rand_shoot" to="." method="_on_Timer_rand_shoot_timeout"]

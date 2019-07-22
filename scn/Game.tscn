@@ -16,7 +16,7 @@ flags_unshaded = true
 flags_do_not_receive_shadows = true
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "move_forward"
 length = 1.5
 tracks/0/type = "value"
@@ -129,11 +129,12 @@ initial_speed = 0.5
 max_speed_factor = 2.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemies wrapper"]
-anims/move_forward = SubResource( 7 )
+anims/move_forward = SubResource( 4 )
 anims/move_left = SubResource( 5 )
 anims/move_right = SubResource( 6 )
 
 [node name="enemies" type="Spatial" parent="enemies wrapper"]
+editor/display_folded = true
 
 [node name="Enemy1" parent="enemies wrapper/enemies" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25 )
