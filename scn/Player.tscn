@@ -31,3 +31,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.90914 )
 [node name="cooldown" type="Timer" parent="."]
 one_shot = true
 
+[node name="enemy_detector" type="Area" parent="."]
+editor/display_folded = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2" type="CollisionShape" parent="enemy_detector"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
