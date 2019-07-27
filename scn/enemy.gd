@@ -1,6 +1,6 @@
-extends Area
+extends KinematicBody
 
-var Bullet = load("res://scn/Bullet.tscn")
+var Bullet = preload("res://scn/Bullet.tscn")
 
 
 func _ready():
@@ -8,11 +8,6 @@ func _ready():
     if not $"RayCast_front".is_colliding():
         $"Timer_rand_shoot".wait_time = rand_range(1.0, 10.0)
         $"Timer_rand_shoot".start()
-
-
-func _on_body_entered(body):
-    body.queue_free()
-    self.queue_free()
 
 func _on_tree_exiting():
     if $"RayCast_back".is_colliding():
@@ -30,3 +25,7 @@ func _on_Timer_rand_shoot_timeout():
     b.speed *= -1
     b.translation = $"gun".global_transform.origin
     find_parent("Game").add_child(b)
+
+
+func hit():
+    queue_free()

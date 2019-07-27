@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var Bullet = load("res://scn/Bullet.tscn")
+var Bullet = preload("res://scn/Bullet.tscn")
 
 export var speed = 1    # unit per seccond
 
@@ -22,3 +22,7 @@ func _process(delta):
 
 
     move_and_collide(Vector3(1,0,0) * move * speed * delta)
+
+
+func hit():
+    queue_free()
