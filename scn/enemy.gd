@@ -6,7 +6,7 @@ var Bullet = preload("res://scn/Bullet.tscn")
 func _ready():
     $"RayCast_front".force_raycast_update()
     if not $"RayCast_front".is_colliding():
-        $"Timer_rand_shoot".wait_time = rand_range(1.0, 10.0)
+        $"Timer_rand_shoot".wait_time = rand_range(5.0, 10.0)
         $"Timer_rand_shoot".start()
 
 func _on_tree_exiting():

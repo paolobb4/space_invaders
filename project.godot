@@ -57,7 +57,8 @@ close_game={
 
 3d_physics/layer_1="player"
 3d_physics/layer_2="enemies"
-3d_physics/layer_11="walls"
+3d_physics/layer_11="world limits"
+3d_physics/layer_12="walls"
 
 [rendering]
 

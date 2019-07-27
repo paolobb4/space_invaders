@@ -14,7 +14,7 @@ var next_direction
 
 
 func _ready():
-    $"AnimationPlayer".play("move_" + direction)
+    $"AnimationPlayer".play("move_" + direction, -1, initial_speed)
 
 func _on_limit_left_hit(a):
     direction = "forward"

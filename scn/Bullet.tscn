@@ -14,7 +14,7 @@ points = PoolVector3Array( -0.25, 0.25, 0.5, 0.25, 0.25, -0.5, 0.25, 0.25, 0.5, 
 
 [node name="Bullet" type="Area"]
 collision_layer = 0
-collision_mask = 3
+collision_mask = 2051
 script = ExtResource( 1 )
 speed = 30
 

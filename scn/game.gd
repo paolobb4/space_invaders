@@ -1,10 +1,8 @@
 extends Spatial
 
 onready var cameras = [
-    get_node("Orthogonal_cam"),
-    get_node("Perspective_cam1"),
     get_node("Perspective_cam2"),
-    get_node("Perspective_cam3"),
+    get_node("Orthogonal_cam"),
 ]
 
 var current_camera = 0
