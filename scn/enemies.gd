@@ -13,7 +13,7 @@ var direction = "left"
 var next_direction
 
 
-func _ready():
+func start():
     $"AnimationPlayer".play("move_" + direction, -1, initial_speed)
 
 func _on_limit_left_hit(a):
