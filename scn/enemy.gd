@@ -14,8 +14,9 @@ func _on_tree_exiting():
         $"RayCast_back".get_collider()._on_front_unit_tree_exiting()
 
 func _on_front_unit_tree_exiting():
-    $"Timer_rand_shoot".wait_time = rand_range(1.0, 10.0)
-    $"Timer_rand_shoot".start()
+    if not $"RayCast_front".is_colliding():
+        $"Timer_rand_shoot".wait_time = rand_range(1.0, 10.0)
+        $"Timer_rand_shoot".start()
 
 func _on_Timer_rand_shoot_timeout():
     $"Timer_rand_shoot".wait_time = rand_range(1.0, 10.0)
