@@ -52,7 +52,6 @@ tracks/0/keys = {
 }
 
 [node name="Wave" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
 script = ExtResource( 1 )
 initial_speed = 2.0
 max_speed_factor = 2.0
@@ -65,19 +64,19 @@ anims/move_right = SubResource( 3 )
 [node name="enemies" type="Spatial" parent="."]
 
 [node name="Enemy28" parent="enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
 
 [node name="Enemy29" parent="enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3 )
 
 [node name="Enemy30" parent="enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3 )
 
 [node name="Enemy31" parent="enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3 )
 
 [node name="Enemy32" parent="enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5

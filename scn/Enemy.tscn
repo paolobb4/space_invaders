@@ -3,10 +3,10 @@
 [ext_resource path="res://scn/enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/meshes/enemy1.mesh" type="ArrayMesh" id=2]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0.0941176, 0.0941176, 1 )
 
-[sub_resource type="ConvexPolygonShape" id=3]
+[sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -1, 0.5, 1, 1, 0.5, -1, 1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, 1, -0.5, -1, 1, -0.5, 1, -1, -0.5, -1, 1, 0.5, 1, -1, 0.5, -1, 1, 0.5, -1, -1, 0.5, 1, 1, -0.5, 1, -1, -0.5, -1, 1, -0.5, -1, -1, -0.5, 1, 1, 0.5, 1, -1, -0.5, 1, -1, 0.5, 1, 1, -0.5, 1, 1, 0.5, -1, -1, -0.5, -1, -1, 0.5, -1, 1, -0.5, -1 )
 
 [node name="Enemy" type="KinematicBody"]
@@ -18,10 +18,10 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.75, 0, 0, 0 )
 mesh = ExtResource( 2 )
 skeleton = NodePath("")
-material/0 = SubResource( 4 )
+material/0 = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="RayCast_front" type="RayCast" parent="."]
 enabled = true

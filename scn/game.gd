@@ -28,9 +28,8 @@ func next_wave():
     current_wave = (current_wave + 1) % waves.size()
 
     var new_wave = waves[current_wave].instance()
-    new_wave.translation = $"Wave origin".global_transform.origin
 
-    add_child(new_wave)
+    $"Wave origin".add_child(new_wave)
 
     $"world limits/enemies limit left".connect("body_entered", new_wave, "_on_limit_left_hit")
     $"world limits/enemies limit right".connect("body_entered", new_wave, "_on_limit_right_hit")

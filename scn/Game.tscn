@@ -22,6 +22,7 @@ script = ExtResource( 1 )
 
 [node name="world limits" type="Spatial" parent="."]
 editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 
 [node name="player limit left" type="StaticBody" parent="world limits"]
 editor/display_folded = true
@@ -65,7 +66,7 @@ shape = SubResource( 1 )
 
 [node name="walls" type="Spatial" parent="."]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -20 )
 
 [node name="wall_1" type="Spatial" parent="walls"]
 editor/display_folded = true
@@ -988,35 +989,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, 0.25 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, 1.25 )
 
 [node name="background" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23013, -2.40834, -55.078 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23013, -2.40834, -75.078 )
 mesh = SubResource( 3 )
 skeleton = NodePath("")
 material/0 = null
 
 [node name="Perspective_cam1" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.405585, 0.914057, 0, -0.914057, 0.405585, 0, 22.937, -2.43799 )
+transform = Transform( 1, 0, 0, 0, 0.405585, 0.914057, 0, -0.914057, 0.405585, 0, 22.937, -22.438 )
 visible = false
 current = true
 
 [node name="Perspective_cam2" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.0495731, 0.998771, 0, -0.998771, 0.0495731, 0, 38, -16.14 )
+transform = Transform( 1, 0, 0, 0, 0.0495731, 0.998771, 0, -0.998771, 0.0495731, 0, 38, -36.14 )
 current = true
 fov = 60.0
 
 [node name="Perspective_cam3" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.393351, 0.919388, 0, -0.919388, -0.393351, 0, 26, -34.6621 )
+transform = Transform( 1, 0, 0, 0, -0.393351, 0.919388, 0, -0.919388, -0.393351, 0, 26, -54.6621 )
 visible = false
 current = true
 
 [node name="Orthogonal_cam" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.405585, 0.914057, 0, -0.914057, 0.405585, 0, 22.937, -8 )
+transform = Transform( 1, 0, 0, 0, 0.405585, 0.914057, 0, -0.914057, 0.405585, 0, 22.937, -28 )
 projection = 1
 size = 40.0
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 collision_mask = 1025
 speed = 8
 
 [node name="Wave origin" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60 )
 
