@@ -10,6 +10,8 @@ func _ready():
         $"Timer_rand_shoot".start()
 
 func _on_tree_exiting():
+    find_parent("Wave")._on_enemy_tree_exiting()
+
     if $"RayCast_back".is_colliding():
         $"RayCast_back".get_collider()._on_front_unit_tree_exiting()
 

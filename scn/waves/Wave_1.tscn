@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scn/enemies.gd" type="Script" id=1]
+[ext_resource path="res://scn/Enemy.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "move_forward"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("enemies:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1.57969e-05 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 1.25 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "move_left"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("enemies:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1.57969e-05 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -1.25, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "move_right"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("enemies:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1.57969e-05 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 1.25, 0, 0 ) ]
+}
+
+[node name="Wave" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
+script = ExtResource( 1 )
+initial_speed = 2.0
+max_speed_factor = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/move_forward = SubResource( 1 )
+anims/move_left = SubResource( 2 )
+anims/move_right = SubResource( 3 )
+
+[node name="enemies" type="Spatial" parent="."]
+
+[node name="Enemy28" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+
+[node name="Enemy29" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6 )
+
+[node name="Enemy30" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6 )
+
+[node name="Enemy31" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 6 )
+
+[node name="Enemy32" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 6 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="start"]
