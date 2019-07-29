@@ -12,8 +12,8 @@ onready var speed_increment = initial_speed * (max_speed_factor - 1 ) / original
 var direction = "left"
 var next_direction
 
-func start():
-    $"AnimationPlayer".play("move_" + direction, -1, initial_speed)
+func _ready():
+    $"AnimationPlayer".play("spawn")
 
 func _on_limit_left_hit(a):
     direction = "forward"
