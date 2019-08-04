@@ -2,14 +2,18 @@
 
 [ext_resource path="res://scn/bullet.gd" type="Script" id=1]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 1, 1, 0.117647, 1 )
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 0.5, 1 )
 
-[sub_resource type="CubeMesh" id=2]
-material = SubResource( 1 )
-size = Vector3( 0.5, 0.5, 1 )
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.960784, 1, 0.282353, 1 )
+emission_enabled = true
+emission = Color( 0.992157, 1, 0, 1 )
+emission_energy = 10.0
+emission_operator = 0
+emission_on_uv2 = false
 
-[sub_resource type="ConvexPolygonShape" id=3]
+[sub_resource type="ConvexPolygonShape" id=2]
 margin = 0.001
 points = PoolVector3Array( -0.25, 0.25, 0.5, 0.25, 0.25, -0.5, 0.25, 0.25, 0.5, -0.25, 0.25, -0.5, -0.25, -0.25, 0.5, 0.25, -0.25, -0.5, 0.25, -0.25, 0.5, -0.25, -0.25, -0.5, 0.25, 0.25, 0.5, -0.25, 0.25, -0.5, 0.25, 0.25, -0.5, -0.25, 0.25, 0.5, 0.25, -0.25, 0.5, -0.25, -0.25, -0.5, 0.25, -0.25, -0.5, -0.25, -0.25, 0.5, 0.25, 0.25, 0.5, -0.25, -0.25, 0.5, -0.25, 0.25, 0.5, 0.25, -0.25, 0.5, 0.25, 0.25, -0.5, -0.25, -0.25, -0.5, -0.25, 0.25, -0.5, 0.25, -0.25, -0.5 )
 
@@ -20,11 +24,12 @@ script = ExtResource( 1 )
 speed = 40
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
-material/0 = null
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
