@@ -65,21 +65,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.5904 )
 shape = SubResource( 1 )
 
 [node name="walls" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -20 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 
 [node name="Wall_1" parent="walls" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.50338 )
 
 [node name="Wall_2" parent="walls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -7.50338 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -7.50338 )
 
 [node name="Wall_3" parent="walls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -7.50338 )
-
-[node name="Wall_4" parent="walls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -7.50338 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -7.50338 )
 
 [node name="Wall_5" parent="walls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -7.50338 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -7.50338 )
+
+[node name="Wall_4" parent="walls" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -7.50338 )
 
 [node name="background" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23013, -2.40834, -75.078 )
@@ -87,20 +88,10 @@ mesh = SubResource( 3 )
 skeleton = NodePath("")
 material/0 = null
 
-[node name="Perspective_cam1" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.405585, 0.914057, 0, -0.914057, 0.405585, 0, 22.937, -22.438 )
-visible = false
-current = true
-
-[node name="Perspective_cam2" type="Camera" parent="."]
+[node name="Perspective_cam" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.0495731, 0.998771, 0, -0.998771, 0.0495731, 0, 38, -36.14 )
 current = true
 fov = 60.0
-
-[node name="Perspective_cam3" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.393351, 0.919388, 0, -0.919388, -0.393351, 0, 26, -54.6621 )
-visible = false
-current = true
 
 [node name="Orthogonal_cam" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.405585, 0.914057, 0, -0.914057, 0.405585, 0, 22.937, -28 )

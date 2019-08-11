@@ -1,188 +1,189 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scn/WallChunk.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scn/wall.gd" type="Script" id=1]
+[ext_resource path="res://scn/WallChunk.tscn" type="PackedScene" id=2]
 
 [node name="Wall" type="Spatial"]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7.50338 )
+script = ExtResource( 1 )
 
-[node name="WallChunk_1" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_1" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.25 )
 
-[node name="WallChunk_25" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_25" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75 )
 
-[node name="WallChunk_13" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_13" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.25 )
 
-[node name="WallChunk_41" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_41" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 1.25 )
 
-[node name="WallChunk_3" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_3" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, -0.25 )
 
-[node name="WallChunk_28" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_28" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0.75 )
 
-[node name="WallChunk_16" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_16" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0.25 )
 
-[node name="WallChunk_33" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_33" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 1.25 )
 
-[node name="WallChunk_5" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_5" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, -0.25 )
 
-[node name="WallChunk_27" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_27" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 0.75 )
 
-[node name="WallChunk_15" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_15" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 0.25 )
 
-[node name="WallChunk_39" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_39" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 1.25 )
 
-[node name="WallChunk_8" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_8" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, -0.25 )
 
-[node name="WallChunk_38" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_38" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, 0.75 )
 
-[node name="WallChunk_24" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_24" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, 0.25 )
 
-[node name="WallChunk_48" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_48" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, 1.25 )
 
-[node name="WallChunk_29" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_29" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0, 0.75 )
 
-[node name="WallChunk_49" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_49" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0, 1.75 )
 
-[node name="WallChunk_56" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_56" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, 1.75 )
 
-[node name="WallChunk_60" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_60" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 1.75 )
 
-[node name="WallChunk_64" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_64" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 1.75 )
 
-[node name="WallChunk_17" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_17" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0, 0.25 )
 
-[node name="WallChunk_32" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_32" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0, 1.25 )
 
-[node name="WallChunk_50" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_50" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0, 2.25 )
 
-[node name="WallChunk_54" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_54" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, 2.25 )
 
-[node name="WallChunk_62" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_62" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 2.25 )
 
-[node name="WallChunk_11" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_11" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, -0.25 )
 
-[node name="WallChunk_35" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_35" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 0.75 )
 
-[node name="WallChunk_21" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_21" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 0.25 )
 
-[node name="WallChunk_45" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_45" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 1.25 )
 
-[node name="WallChunk_2" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -0.25 )
 
-[node name="WallChunk_37" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_37" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0.75 )
 
-[node name="WallChunk_23" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_23" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0.25 )
 
-[node name="WallChunk_47" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_47" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 1.25 )
 
-[node name="WallChunk_4" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_4" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, -0.25 )
 
-[node name="WallChunk_36" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_36" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0.75 )
 
-[node name="WallChunk_22" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_22" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0.25 )
 
-[node name="WallChunk_46" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_46" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 1.25 )
 
-[node name="WallChunk_6" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_6" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, -0.25 )
 
-[node name="WallChunk_26" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_26" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 0.75 )
 
-[node name="WallChunk_14" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_14" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 0.25 )
 
-[node name="WallChunk_40" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_40" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 1.25 )
 
-[node name="WallChunk_7" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_7" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -0.25 )
 
-[node name="WallChunk_30" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_30" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 0.75 )
 
-[node name="WallChunk_18" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_18" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 0.25 )
 
-[node name="WallChunk_42" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_42" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 1.25 )
 
-[node name="WallChunk_9" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_9" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, -0.25 )
 
-[node name="WallChunk_34" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_34" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, 0.75 )
 
-[node name="WallChunk_51" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_51" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, 1.75 )
 
-[node name="WallChunk_55" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_55" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 1.75 )
 
-[node name="WallChunk_59" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_59" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 1.75 )
 
-[node name="WallChunk_63" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_63" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, 1.75 )
 
-[node name="WallChunk_20" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_20" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, 0.25 )
 
-[node name="WallChunk_44" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_44" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, 1.25 )
 
-[node name="WallChunk_52" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_52" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, 2.25 )
 
-[node name="WallChunk_57" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_57" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 2.25 )
 
-[node name="WallChunk_61" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_61" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, 2.25 )
 
-[node name="WallChunk_31" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_31" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, 0.75 )
 
-[node name="WallChunk_19" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_19" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, 0.25 )
 
-[node name="WallChunk_43" parent="." instance=ExtResource( 1 )]
+[node name="WallChunk_43" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, 1.25 )
 
