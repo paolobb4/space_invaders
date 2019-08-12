@@ -29,7 +29,7 @@ func _on_Timer_rand_shoot_timeout():
     var b = Blast.instance()
     b.speed *= -1
     b.translation = $"gun".global_transform.origin
-    find_parent("Game").add_child(b)
+    find_parent("Game").call_deferred("add_child", b)
 
 
 func hit():

@@ -18,7 +18,7 @@ func _process(delta):
             $"cooldown".start()
             var b = Blast.instance()
             b.translation = $"gun".global_transform.origin
-            find_parent("Game").add_child(b)
+            find_parent("Game").call_deferred("add_child", b)
 
 
     move_and_collide(Vector3(1,0,0) * move * speed * delta)
