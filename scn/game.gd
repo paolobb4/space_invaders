@@ -1,5 +1,7 @@
 extends Spatial
 
+var Wall = preload("res://scn//Wall.tscn")
+
 var waves = [
         preload("res://scn/waves/Wave_1.tscn"),
         preload("res://scn/waves/Wave_2.tscn"),
@@ -8,7 +10,7 @@ var waves = [
 var current_wave = -1
 
 onready var cameras = [
-    get_node("Perspective_cam2"),
+    get_node("Perspective_cam"),
     get_node("Orthogonal_cam"),
 ]
 
@@ -35,3 +37,6 @@ func next_wave():
     $"world limits/enemies limit right".connect("body_entered", new_wave, "_on_limit_right_hit")
 
     new_wave.connect("tree_exited", self, "next_wave")
+
+    for wall in $"walls".get_children():
+        wall.regenerate()
