@@ -1,6 +1,8 @@
 extends KinematicBody
 
-var Bullet = preload("res://scn/Bullet.tscn")
+var Blast = preload("res://scn/weapons/Blast.tscn")
+var Laser = preload("res://scn/weapons/Laser.tscn")
+var Rocket = preload("res://scn/weapons/Rocket.tscn")
 
 
 func _ready():
@@ -24,7 +26,7 @@ func _on_Timer_rand_shoot_timeout():
     $"Timer_rand_shoot".wait_time = rand_range(1.0, 10.0)
     $"Timer_rand_shoot".start()
 
-    var b = Bullet.instance()
+    var b = Blast.instance()
     b.speed *= -1
     b.translation = $"gun".global_transform.origin
     find_parent("Game").add_child(b)

@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var Bullet = preload("res://scn/Bullet.tscn")
+var Blast = preload("res://scn/weapons/Blast.tscn")
 
 export var speed = 1    # unit per seccond
 
@@ -16,7 +16,7 @@ func _process(delta):
     if Input.is_action_just_pressed("shoot"):
         if ($"cooldown".time_left <= 0):
             $"cooldown".start()
-            var b = Bullet.instance()
+            var b = Blast.instance()
             b.translation = $"gun".global_transform.origin
             find_parent("Game").add_child(b)
 
