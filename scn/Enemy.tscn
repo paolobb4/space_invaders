@@ -4,7 +4,12 @@
 [ext_resource path="res://assets/meshes/enemy1.mesh" type="ArrayMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 1, 0.0941176, 0.0941176, 1 )
+albedo_color = Color( 0.941176, 0.101961, 0.101961, 1 )
+emission_enabled = true
+emission = Color( 0.156863, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
 
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -1, 0.5, 1, 1, 0.5, -1, 1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, 1, -0.5, -1, 1, -0.5, 1, -1, -0.5, -1, 1, 0.5, 1, -1, 0.5, -1, 1, 0.5, -1, -1, 0.5, 1, 1, -0.5, 1, -1, -0.5, -1, 1, -0.5, -1, -1, -0.5, 1, 1, 0.5, 1, -1, -0.5, 1, -1, 0.5, 1, 1, -0.5, 1, 1, 0.5, -1, -1, -0.5, -1, -1, 0.5, -1, 1, -0.5, -1 )
