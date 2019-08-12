@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scn/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/meshes/Ship.mesh" type="ArrayMesh" id=2]
 
-[sub_resource type="ConvexPolygonShape" id=1]
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.494118, 0.870588, 1, 1 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( 0, 1, 0.5, 0, 1, -0.5, 0, 1, 0.5, 0, 1, -0.5, -1, -1, 0.5, 1, -1, -0.5, 1, -1, 0.5, -1, -1, -0.5, 0, 1, 0.5, 0, 1, -0.5, 0, 1, -0.5, 0, 1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, -1, -0.5, -1, -1, 0.5, -1, -1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, -1, -0.5 )
 
 [node name="Player" type="KinematicBody"]
@@ -14,11 +17,12 @@ speed = 7
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0.523754 )
 mesh = ExtResource( 2 )
-material/0 = null
+skeleton = NodePath("")
+material/0 = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="gun" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.90914 )
@@ -34,6 +38,6 @@ collision_mask = 2
 
 [node name="CollisionShape2" type="CollisionShape" parent="enemy_detector"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
