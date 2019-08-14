@@ -27,10 +27,6 @@ shape = SubResource( 2 )
 [node name="gun" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.90914 )
 
-[node name="cooldown" type="Timer" parent="."]
-wait_time = 0.7
-one_shot = true
-
 [node name="enemy_detector" type="Area" parent="."]
 editor/display_folded = true
 collision_layer = 0

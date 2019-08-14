@@ -1,10 +1,10 @@
 extends KinematicBody
 
-var Blast = preload("res://scn/weapons/Blast.tscn")
 var Laser = preload("res://scn/weapons/Laser.tscn")
 
 export var speed = 1    # unit per seccond
 
+var can_shoot = true
 
 func _process(delta):
     var move = 0
@@ -15,14 +15,18 @@ func _process(delta):
         move += 1
 
     if Input.is_action_just_pressed("shoot"):
-        if ($"cooldown".time_left <= 0):
-            $"cooldown".start()
-            var b = Laser.instance()
-            b.translation = $"gun".global_transform.origin
-            find_parent("Game").call_deferred("add_child", b)
-
+        if (can_shoot):
+            can_shoot = false
+            var projectile = Laser.instance()
+            projectile.translation = $"gun".global_transform.origin
+            projectile.connect("tree_exiting", self, "projectile_exiting_tree")
+            find_parent("Game").call_deferred("add_child", projectile)
 
     move_and_collide(Vector3(1,0,0) * move * speed * delta)
+
+
+func projectile_exiting_tree():
+    can_shoot = true
 
 
 func hit():

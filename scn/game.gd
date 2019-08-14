@@ -40,3 +40,7 @@ func next_wave():
 
     for wall in $"walls".get_children():
         wall.regenerate()
+
+
+func on_projectile_limit_hit(projectile):
+    projectile.queue_free()

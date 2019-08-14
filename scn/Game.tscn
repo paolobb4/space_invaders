@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scn/game.gd" type="Script" id=1]
 [ext_resource path="res://scn/Wall.tscn" type="PackedScene" id=2]
@@ -8,14 +8,17 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 24 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 35, 1, 1 )
+
+[sub_resource type="PlaneMesh" id=3]
+size = Vector2( 100, 150 )
+
+[sub_resource type="SpatialMaterial" id=5]
 flags_unshaded = true
 flags_do_not_receive_shadows = true
 albedo_texture = ExtResource( 3 )
-
-[sub_resource type="PlaneMesh" id=3]
-material = SubResource( 2 )
-size = Vector2( 100, 150 )
+uv1_scale = Vector3( 6, 6, 1 )
 
 [node name="Game" type="Spatial"]
 script = ExtResource( 1 )
@@ -64,7 +67,28 @@ collision_mask = 2
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.5904 )
 shape = SubResource( 1 )
 
+[node name="projectiles limit top" type="Area" parent="world limits"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -42 )
+monitorable = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="world limits/projectiles limit top"]
+shape = SubResource( 4 )
+
+[node name="projectiles limit bottom" type="Area" parent="world limits"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12 )
+monitorable = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="world limits/projectiles limit bottom"]
+shape = SubResource( 4 )
+
 [node name="walls" type="Spatial" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 
 [node name="Wall_1" parent="walls" instance=ExtResource( 2 )]
@@ -86,7 +110,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -7.50338 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23013, -2.40834, -75.078 )
 mesh = SubResource( 3 )
 skeleton = NodePath("")
-material/0 = null
+material/0 = SubResource( 5 )
 
 [node name="Perspective_cam" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.0495731, 0.998771, 0, -0.998771, 0.0495731, 0, 38, -36.14 )
@@ -106,3 +130,5 @@ speed = 8
 [node name="Wave origin" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60 )
 
+[connection signal="area_entered" from="world limits/projectiles limit top" to="." method="on_projectile_limit_hit"]
+[connection signal="area_entered" from="world limits/projectiles limit bottom" to="." method="on_projectile_limit_hit"]
