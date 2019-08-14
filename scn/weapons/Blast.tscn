@@ -5,7 +5,7 @@
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 0.5, 1 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 1, 0.568627, 0.105882, 1 )
 emission_enabled = true
 emission = Color( 1, 0, 0, 1 )
@@ -18,15 +18,15 @@ margin = 0.001
 points = PoolVector3Array( -0.25, 0.25, 0.5, 0.25, 0.25, -0.5, 0.25, 0.25, 0.5, -0.25, 0.25, -0.5, -0.25, -0.25, 0.5, 0.25, -0.25, -0.5, 0.25, -0.25, 0.5, -0.25, -0.25, -0.5, 0.25, 0.25, 0.5, -0.25, 0.25, -0.5, 0.25, 0.25, -0.5, -0.25, 0.25, 0.5, 0.25, -0.25, 0.5, -0.25, -0.25, -0.5, 0.25, -0.25, -0.5, -0.25, -0.25, 0.5, 0.25, 0.25, 0.5, -0.25, -0.25, 0.5, -0.25, 0.25, 0.5, 0.25, -0.25, 0.5, 0.25, 0.25, -0.5, -0.25, -0.25, -0.5, -0.25, 0.25, -0.5, 0.25, -0.25, -0.5 )
 
 [node name="Blast" type="Area"]
-collision_layer = 0
-collision_mask = 2051
+collision_layer = 4
+collision_mask = 2055
 script = ExtResource( 1 )
-speed = 40
+speed = 30
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 skeleton = NodePath("")
-material/0 = SubResource( 4 )
+material/0 = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 3 )
