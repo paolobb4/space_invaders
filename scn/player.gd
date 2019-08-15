@@ -6,6 +6,7 @@ export var speed = 1    # unit per seccond
 
 var ammo = 1
 var max_ammo = 1
+var speed_bonus = 1 # miltiple
 
 func _process(delta):
     var move = 0
@@ -18,7 +19,7 @@ func _process(delta):
     if Input.is_action_just_pressed("shoot"):
         shoot()
 
-    move_and_collide(Vector3(1,0,0) * move * speed * delta)
+    move_and_collide(Vector3(1,0,0) * move * speed * speed_bonus * delta)
 
 func shoot():
     """Player can only shoot as many time as the ammo allows. Ammo is restored
@@ -64,7 +65,7 @@ func _on_bonus_hit(bonus):
     if bonus == "Shield":
         print("Bonus was hit: ", bonus)
     if bonus == "Speed":
-        print("Bonus was hit: ", bonus)
+        switchSpeedBonus(true)
 
 
 func switchDoubleShot(enable):
@@ -75,3 +76,12 @@ func switchDoubleShot(enable):
     else:
         max_ammo = 1
         ammo = min(ammo, 1)
+
+
+func switchSpeedBonus(enable):
+    if enable:
+        speed_bonus = 1.50
+        $"Timer_BonusSpeed".start()
+    else:
+        speed_bonus = 1
+
