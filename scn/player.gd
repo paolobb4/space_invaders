@@ -8,6 +8,10 @@ var ammo = 1
 var max_ammo = 1
 var speed_bonus = 1 # miltiple
 
+
+func _ready():
+    switchShield(false)
+
 func _process(delta):
     var move = 0
 
@@ -63,7 +67,7 @@ func _on_bonus_hit(bonus):
     if bonus == "DoubleShot":
         switchDoubleShot(true)
     if bonus == "Shield":
-        print("Bonus was hit: ", bonus)
+        switchShield(true)
     if bonus == "Speed":
         switchSpeedBonus(true)
 
@@ -85,3 +89,18 @@ func switchSpeedBonus(enable):
     else:
         speed_bonus = 1
 
+
+func switchShield(enable):
+    if enable:
+        $"Shield".monitoring = true
+        $"Shield".visible = true
+        $"Timer_BonusShield".start()
+    else:
+        $"Shield".monitoring = false
+        $"Shield".visible = false
+        $"Timer_BonusShield".stop()
+
+
+func _on_Shield_hit(other):
+    other.hit()
+    switchShield(false)
