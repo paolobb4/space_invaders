@@ -38,6 +38,10 @@ func next_wave():
 
     new_wave.connect("tree_exited", self, "next_wave")
 
+    regenWalls()
+
+
+func regenWalls():
     for wall in $"walls".get_children():
         wall.regenerate()
 

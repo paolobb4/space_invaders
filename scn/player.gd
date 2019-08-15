@@ -39,7 +39,7 @@ func _on_enemy_detector_body_entered(body):
 
 func _on_bonus_hit(bonus):
     if bonus == "RegenWalls":
-        print("Bonus was hit: ", bonus)
+        get_parent().regenWalls()
     if bonus == "DoubleShot":
         print("Bonus was hit: ", bonus)
     if bonus == "Shield":
