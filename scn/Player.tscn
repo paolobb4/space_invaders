@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scn/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/meshes/Ship.mesh" type="ArrayMesh" id=2]
@@ -8,6 +8,23 @@ albedo_color = Color( 0.494118, 0.870588, 1, 1 )
 
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( 0, 1, 0.5, 0, 1, -0.5, 0, 1, 0.5, 0, 1, -0.5, -1, -1, 0.5, 1, -1, -0.5, 1, -1, 0.5, -1, -1, -0.5, 0, 1, 0.5, 0, 1, -0.5, 0, 1, -0.5, 0, 1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, -1, -0.5, -1, -1, 0.5, -1, -1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, -1, -0.5 )
+
+[sub_resource type="CapsuleMesh" id=3]
+radius = 1.685
+mid_height = 0.315
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+albedo_color = Color( 0.392157, 1, 0.266667, 0.32549 )
+emission_enabled = true
+emission = Color( 0.196078, 1, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="CapsuleShape" id=5]
+radius = 1.69
+height = 0.32
 
 [node name="Player" type="KinematicBody"]
 collision_mask = 1024
@@ -36,4 +53,35 @@ collision_mask = 2
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 2 )
 
+[node name="Shield" type="Area" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.579064 )
+monitorable = false
+collision_layer = 0
+collision_mask = 6
+
+[node name="MeshInstance" type="MeshInstance" parent="Shield"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Shield"]
+shape = SubResource( 5 )
+
+[node name="Timer_BonusDoubleShot" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Timer_BonusSpeed" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="Timer_BonusShield" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
 [connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
+[connection signal="area_entered" from="Shield" to="." method="_on_Shield_hit"]
+[connection signal="body_entered" from="Shield" to="." method="_on_Shield_hit"]
+[connection signal="timeout" from="Timer_BonusDoubleShot" to="." method="switchDoubleShot" binds= [ false ]]
+[connection signal="timeout" from="Timer_BonusSpeed" to="." method="switchSpeedBonus"]
+[connection signal="timeout" from="Timer_BonusShield" to="." method="switchShield" binds= [ false ]]

@@ -60,6 +60,7 @@ close_game={
 3d_physics/layer_3="projectiles"
 3d_physics/layer_11="world limits"
 3d_physics/layer_12="walls"
+3d_physics/layer_13="bonus"
 
 [rendering]
 
