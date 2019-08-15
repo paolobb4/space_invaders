@@ -35,3 +35,14 @@ func hit():
 
 func _on_enemy_detector_body_entered(body):
     hit()
+
+
+func _on_bonus_hit(bonus):
+    if bonus == "RegenWalls":
+        print("Bonus was hit: ", bonus)
+    if bonus == "DoubleShot":
+        print("Bonus was hit: ", bonus)
+    if bonus == "Shield":
+        print("Bonus was hit: ", bonus)
+    if bonus == "Speed":
+        print("Bonus was hit: ", bonus)
