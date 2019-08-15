@@ -36,4 +36,9 @@ collision_mask = 2
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 2 )
 
+[node name="Timer_BonusDoubleShot" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
+[connection signal="timeout" from="Timer_BonusDoubleShot" to="." method="switchDoubleShot" binds= [ false ]]

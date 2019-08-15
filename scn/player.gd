@@ -4,7 +4,8 @@ var Laser = preload("res://scn/weapons/Laser.tscn")
 
 export var speed = 1    # unit per seccond
 
-var can_shoot = true
+var ammo = 1
+var max_ammo = 1
 
 func _process(delta):
     var move = 0
@@ -15,18 +16,34 @@ func _process(delta):
         move += 1
 
     if Input.is_action_just_pressed("shoot"):
-        if (can_shoot):
-            can_shoot = false
-            var projectile = Laser.instance()
-            projectile.translation = $"gun".global_transform.origin
-            projectile.connect("tree_exiting", self, "projectile_exiting_tree")
-            find_parent("Game").call_deferred("add_child", projectile)
+        shoot()
 
     move_and_collide(Vector3(1,0,0) * move * speed * delta)
 
+func shoot():
+    """Player can only shoot as many time as the ammo allows. Ammo is restored
+    each time a player projectile exits the tree
+    """
+   
+    if (ammo):
+        ammo -= 1
+
+        var projectile = Laser.instance()
+        projectile.translation = $"gun".global_transform.origin
+        projectile.connect("tree_exiting", self, "projectile_exiting_tree")
+        find_parent("Game").call_deferred("add_child", projectile)
+
 
 func projectile_exiting_tree():
-    can_shoot = true
+    """Restores ammo to the player. Player shot projectiles are hooked to this
+    function.
+    
+    By checking with max_ammo, ammo won't be restored by a second shot
+    fired rigth before DoubleShot bonus gets disabled.
+    """
+
+    if ammo < max_ammo:
+        ammo += 1
 
 
 func hit():
@@ -38,11 +55,23 @@ func _on_enemy_detector_body_entered(body):
 
 
 func _on_bonus_hit(bonus):
+    """ Called by bonus objects when hit by projectile """
+
     if bonus == "RegenWalls":
         get_parent().regenWalls()
     if bonus == "DoubleShot":
-        print("Bonus was hit: ", bonus)
+        switchDoubleShot(true)
     if bonus == "Shield":
         print("Bonus was hit: ", bonus)
     if bonus == "Speed":
         print("Bonus was hit: ", bonus)
+
+
+func switchDoubleShot(enable):
+    if enable:
+        max_ammo = 2
+        ammo += 1
+        $"Timer_BonusDoubleShot".start()
+    else:
+        max_ammo = 1
+        ammo = min(ammo, 1)
