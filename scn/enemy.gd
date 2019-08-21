@@ -6,41 +6,44 @@ var Rocket = preload("res://scn/weapons/Rocket.tscn")
 
 
 func _ready():
-    $"RayCast_front".force_raycast_update()
-    if not $"RayCast_front".is_colliding():
-        $"Timer_rand_shoot".wait_time = rand_range(5.0, 10.0)
-        $"Timer_rand_shoot".start()
+    $"Timer_weapon_cooldown".wait_time = rand_range(2.0, 5.0)
+    $"Timer_weapon_cooldown".start()
+    $"Timer_rand_shoot".wait_time = rand_range(5.0, 10.0)
+    $"Timer_rand_shoot".start()
 
-func _on_tree_exiting():
-    find_parent("Wave")._on_enemy_tree_exiting()
 
-    if $"RayCast_back".is_colliding():
-        $"RayCast_back".get_collider()._on_front_unit_tree_exiting()
-
-func _on_front_unit_tree_exiting():
-    if not $"RayCast_front".is_colliding():
-        $"Timer_rand_shoot".wait_time = rand_range(1.0, 10.0)
-        $"Timer_rand_shoot".start()
+func _process(delta):
+    if $"Timer_weapon_cooldown".time_left == 0:
+        if $"RayCast_player_1".is_colliding() or $"RayCast_player_2".is_colliding():
+            shoot()
 
 
 func choice(a):
     var r = randi() % a.size()
     return a[r]
 
+
 func _on_Timer_rand_shoot_timeout():
-    $"Timer_rand_shoot".wait_time = rand_range(1.0, 10.0)
-    $"Timer_rand_shoot".start()
+    shoot()
 
-    var w = choice([
-        Blast, Blast, Blast, Blast, Blast, Blast, Blast, Blast, Blast,
-        Laser, Laser, Laser,
-        Rocket
-    ])
 
-    var b = w.instance()
-    b.speed *= -1
-    b.translation = $"gun".global_transform.origin
-    find_parent("Game").call_deferred("add_child", b)
+func shoot():
+    if not $"RayCast_front".is_colliding():
+        $"Timer_weapon_cooldown".wait_time = rand_range(2.0, 5.0)
+        $"Timer_weapon_cooldown".start()
+        $"Timer_rand_shoot".wait_time = rand_range(5.0, 10.0)
+        $"Timer_rand_shoot".start()
+
+        var w = choice([
+            Blast, Blast, Blast, Blast, Blast, Blast, Blast, Blast, Blast,
+            Laser, Laser, Laser,
+            Rocket
+        ])
+
+        var b = w.instance()
+        b.speed *= -1
+        b.translation = $"gun".global_transform.origin
+        find_parent("Game").call_deferred("add_child", b)
 
 
 func hit():

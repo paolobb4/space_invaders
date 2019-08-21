@@ -41,8 +41,21 @@ collision_mask = 2
 [node name="Timer_rand_shoot" type="Timer" parent="."]
 one_shot = true
 
+[node name="Timer_weapon_cooldown" type="Timer" parent="."]
+one_shot = true
+
 [node name="gun" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+
+[node name="RayCast_player_1" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 200 )
+
+[node name="RayCast_player_2" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 200 )
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="timeout" from="Timer_rand_shoot" to="." method="_on_Timer_rand_shoot_timeout"]

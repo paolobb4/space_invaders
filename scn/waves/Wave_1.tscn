@@ -71,7 +71,7 @@ tracks/0/keys = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
 script = ExtResource( 1 )
 initial_speed = 2.0
-max_speed_factor = 2.0
+max_speed_factor = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/move_forward = SubResource( 1 )
@@ -111,11 +111,38 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7 )
 [node name="Enemy38" parent="enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 3 )
 
+[node name="Enemy40" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 3 )
+
+[node name="Enemy41" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 3 )
+
+[node name="Enemy57" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 3 )
+
 [node name="Enemy62" parent="enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 11 )
 
+[node name="Enemy63" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 11 )
+
+[node name="Enemy64" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 11 )
+
+[node name="Enemy65" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 11 )
+
 [node name="Enemy45" parent="enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 7 )
+
+[node name="Enemy46" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 7 )
+
+[node name="Enemy47" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 7 )
+
+[node name="Enemy48" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 7 )
 
 [node name="Enemy31" parent="enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3 )
@@ -138,10 +165,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 7 )
 [node name="Enemy33" parent="enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 3 )
 
+[node name="Enemy34" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 3 )
+
+[node name="Enemy35" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 3 )
+
+[node name="Enemy37" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 3 )
+
 [node name="Enemy71" parent="enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 11 )
 
+[node name="Enemy72" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 11 )
+
+[node name="Enemy73" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 11 )
+
+[node name="Enemy74" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 11 )
+
 [node name="Enemy49" parent="enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 7 )
+
+[node name="Enemy50" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 7 )
+
+[node name="Enemy55" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 7 )
+
+[node name="Enemy56" parent="enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 7 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
