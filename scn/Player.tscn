@@ -68,15 +68,11 @@ material/0 = SubResource( 4 )
 shape = SubResource( 5 )
 
 [node name="Timer_BonusDoubleShot" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 40.0
 one_shot = true
 
 [node name="Timer_BonusSpeed" type="Timer" parent="."]
-wait_time = 20.0
-one_shot = true
-
-[node name="Timer_BonusShield" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 60.0
 one_shot = true
 
 [connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
@@ -84,4 +80,3 @@ one_shot = true
 [connection signal="body_entered" from="Shield" to="." method="_on_Shield_hit"]
 [connection signal="timeout" from="Timer_BonusDoubleShot" to="." method="switchDoubleShot" binds= [ false ]]
 [connection signal="timeout" from="Timer_BonusSpeed" to="." method="switchSpeedBonus"]
-[connection signal="timeout" from="Timer_BonusShield" to="." method="switchShield" binds= [ false ]]

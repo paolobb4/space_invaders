@@ -94,11 +94,9 @@ func switchShield(enable):
     if enable:
         $"Shield".monitoring = true
         $"Shield".visible = true
-        $"Timer_BonusShield".start()
     else:
         $"Shield".monitoring = false
         $"Shield".visible = false
-        $"Timer_BonusShield".stop()
 
 
 func _on_Shield_hit(other):
