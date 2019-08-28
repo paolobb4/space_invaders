@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/meshes/Ship.mesh" type="ArrayMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.494118, 0.870588, 1, 1 )
+albedo_color = Color( 0.337255, 0.623529, 0.721569, 1 )
 
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( 0, 1, 0.5, 0, 1, -0.5, 0, 1, 0.5, 0, 1, -0.5, -1, -1, 0.5, 1, -1, -0.5, 1, -1, 0.5, -1, -1, -0.5, 0, 1, 0.5, 0, 1, -0.5, 0, 1, -0.5, 0, 1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, -1, -0.5, -1, -1, 0.5, -1, -1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, -1, -0.5 )

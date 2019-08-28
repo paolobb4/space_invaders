@@ -73,6 +73,12 @@ script = ExtResource( 1 )
 initial_speed = 2.0
 max_speed_factor = 10.0
 
+[node name="bonus_spawn_left" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0 )
+
+[node name="bonus_spawn_right" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/move_forward = SubResource( 1 )
 anims/move_left = SubResource( 2 )
@@ -80,6 +86,7 @@ anims/move_right = SubResource( 3 )
 anims/spawn = SubResource( 4 )
 
 [node name="enemies" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Enemy28" parent="enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )

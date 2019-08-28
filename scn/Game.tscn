@@ -146,5 +146,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -24 )
 [node name="BonusSpeed" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -24 )
 
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.582967, -0.267601, 0.767163, -0.161907, 0.96353, 0.213064, -0.796201, 1.93871e-08, -0.605033, 42, 0, -42 )
+
 [connection signal="area_entered" from="world limits/projectiles limit top" to="." method="on_projectile_limit_hit"]
 [connection signal="area_entered" from="world limits/projectiles limit bottom" to="." method="on_projectile_limit_hit"]

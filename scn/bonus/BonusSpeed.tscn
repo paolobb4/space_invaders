@@ -6,6 +6,7 @@
 height = 0.5
 
 [sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.54902, 0.576471, 0.576471, 1 )
 
 [sub_resource type="CylinderShape" id=3]
 height = 0.5
