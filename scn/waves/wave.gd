@@ -2,6 +2,12 @@ extends Spatial
 # State machine that controls enemy movements as a group.
 # Possible states are: left, right, forward
 
+onready var bonus_scns = {
+        "Speed": preload("res://scn/bonus/BonusSpeed.tscn"),
+        "Shield": preload("res://scn/bonus/BonusShield.tscn"),
+        "RegenWalls": preload("res://scn/bonus/BonusRegenWalls.tscn"),
+        "DoubleShot": preload("res://scn/bonus/BonusDoubleShot.tscn"),
+    }
 
 export var initial_speed = 1.0
 export var max_speed_factor = 1.0
@@ -39,3 +45,15 @@ func _on_enemy_tree_exiting():
     if $"enemies".get_child_count() == 1:
         print("Wave eliminated")
         queue_free()
+
+
+func spawnBonus(type, direction):
+    var b = bonus_scns[type].instance()
+
+    b.move(direction)
+
+    match direction:
+        'left':
+            $"bonus_spawn_right".call_deferred("add_child", b)
+        'right':
+            $"bonus_spawn_left".call_deferred("add_child", b)

@@ -12,6 +12,7 @@ var current_wave = -1
 onready var cameras = [
     get_node("Perspective_cam"),
     get_node("Orthogonal_cam"),
+    get_node("Orthogonal_cam2"),
 ]
 
 var current_camera = 0
@@ -48,3 +49,7 @@ func regenWalls():
 
 func on_projectile_limit_hit(projectile):
     projectile.queue_free()
+
+
+func _on_bonus_limit_hit(bonus):
+    bonus._on_limit_wall_hit()

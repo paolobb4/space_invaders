@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scn/game.gd" type="Script" id=1]
 [ext_resource path="res://scn/Wall.tscn" type="PackedScene" id=2]
@@ -11,10 +11,13 @@ extents = Vector3( 1, 1, 24 )
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 35, 1, 1 )
 
-[sub_resource type="PlaneMesh" id=3]
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 1, 7 )
+
+[sub_resource type="PlaneMesh" id=4]
 size = Vector2( 100, 150 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=5]
 flags_unshaded = true
 flags_do_not_receive_shadows = true
 albedo_texture = ExtResource( 3 )
@@ -87,6 +90,24 @@ collision_mask = 4
 [node name="CollisionShape" type="CollisionShape" parent="world limits/projectiles limit bottom"]
 shape = SubResource( 2 )
 
+[node name="bonus limit left" type="Area" parent="world limits"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, -36 )
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape" type="CollisionShape" parent="world limits/bonus limit left"]
+shape = SubResource( 3 )
+
+[node name="bonus limit right" type="Area" parent="world limits"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, -36 )
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape" type="CollisionShape" parent="world limits/bonus limit right"]
+shape = SubResource( 3 )
+
 [node name="walls" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
@@ -108,9 +129,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -7.50338 )
 
 [node name="background" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23013, -2.40834, -75.078 )
-mesh = SubResource( 3 )
+mesh = SubResource( 4 )
 skeleton = NodePath("")
-material/0 = SubResource( 4 )
+material/0 = SubResource( 5 )
 
 [node name="Perspective_cam" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.0495731, 0.998771, 0, -0.998771, 0.0495731, 0, 38, -36.14 )
@@ -118,9 +139,14 @@ current = true
 fov = 60.0
 
 [node name="Orthogonal_cam" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.405585, 0.914057, 0, -0.914057, 0.405585, 0, 22.937, -28 )
+transform = Transform( 1, 0, 0, 0, 0.405585, 0.914057, 0, -0.914057, 0.405585, 0, 22, -28 )
 projection = 1
 size = 40.0
+
+[node name="Orthogonal_cam2" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.405585, 0.914057, 0, -0.914057, 0.405585, 0, 22, -28 )
+projection = 1
+size = 60.0
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
@@ -135,3 +161,5 @@ transform = Transform( -0.582967, -0.267601, 0.767163, -0.161907, 0.96353, 0.213
 
 [connection signal="area_entered" from="world limits/projectiles limit top" to="." method="on_projectile_limit_hit"]
 [connection signal="area_entered" from="world limits/projectiles limit bottom" to="." method="on_projectile_limit_hit"]
+[connection signal="body_entered" from="world limits/bonus limit left" to="." method="_on_bonus_limit_hit"]
+[connection signal="body_entered" from="world limits/bonus limit right" to="." method="_on_bonus_limit_hit"]
