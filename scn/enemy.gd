@@ -55,3 +55,7 @@ func shoot():
 
 func hit():
     queue_free()
+
+
+func _on_tree_exiting():
+    find_parent("Wave")._on_enemy_tree_exiting()

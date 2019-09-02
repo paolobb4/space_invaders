@@ -58,7 +58,7 @@ random_shoot_min = 5.0
 shoot_probability = 0.05
 
 [node name="Mesh" type="MeshInstance" parent="."]
-transform = Transform( 0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0 )
+transform = Transform( 0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0.305464, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = null
@@ -86,4 +86,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
 enabled = true
 cast_to = Vector3( 0, 0, 200 )
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="timeout" from="Timer_rand_shoot" to="." method="_on_Timer_rand_shoot_timeout"]

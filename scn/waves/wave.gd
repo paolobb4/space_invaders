@@ -35,5 +35,7 @@ func _on_animation_finished(animation_name):
     $"AnimationPlayer".play("move_" + direction, -1, speed)
 
 func _on_enemy_tree_exiting():
+    print("enemy exiting tree")
     if $"enemies".get_child_count() == 1:
+        print("Wave eliminated")
         queue_free()

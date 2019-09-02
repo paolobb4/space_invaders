@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scn/enemies.gd" type="Script" id=1]
+[ext_resource path="res://scn/waves/wave.gd" type="Script" id=1]
 [ext_resource path="res://scn/Enemy.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -69,8 +69,6 @@ tracks/0/keys = {
 
 [node name="Wave" type="Spatial"]
 script = ExtResource( 1 )
-initial_speed = 2.0
-max_speed_factor = 2.0
 
 [node name="bonus_spawn_left" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0 )
