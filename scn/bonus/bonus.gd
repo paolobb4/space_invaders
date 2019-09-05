@@ -1,7 +1,7 @@
 extends KinematicBody
 
 export(String) var type
-export(int) var speed = 5
+export(int) var speed = 6.8
 
 var direction = 0
 

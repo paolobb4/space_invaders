@@ -70,6 +70,7 @@ tracks/0/keys = {
 [node name="Wave" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
 script = ExtResource( 1 )
+max_speed_factor = 10.0
 
 [node name="bonus_spawn_left" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -3 )
@@ -206,33 +207,33 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
 
 [node name="add_bonus1" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 
 [node name="add_bonus2" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
 
 [node name="add_bonus3" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
 
 [node name="add_bonus4" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
 
 [node name="bonus_idle" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 10.0
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
-[connection signal="timeout" from="add_bonus1" to="add_bonus2" method="start"]
 [connection signal="timeout" from="add_bonus1" to="." method="spawnBonus" binds= [ "DoubleShot", "left" ]]
-[connection signal="timeout" from="add_bonus2" to="add_bonus3" method="start"]
+[connection signal="timeout" from="add_bonus1" to="add_bonus2" method="start"]
 [connection signal="timeout" from="add_bonus2" to="." method="spawnBonus" binds= [ "Speed", "right" ]]
-[connection signal="timeout" from="add_bonus3" to="add_bonus4" method="start"]
+[connection signal="timeout" from="add_bonus2" to="add_bonus3" method="start"]
 [connection signal="timeout" from="add_bonus3" to="." method="spawnBonus" binds= [ "Shield", "left" ]]
-[connection signal="timeout" from="add_bonus4" to="bonus_idle" method="start"]
+[connection signal="timeout" from="add_bonus3" to="add_bonus4" method="start"]
 [connection signal="timeout" from="add_bonus4" to="." method="spawnBonus" binds= [ "RegenWalls", "right" ]]
+[connection signal="timeout" from="add_bonus4" to="bonus_idle" method="start"]
 [connection signal="timeout" from="bonus_idle" to="add_bonus1" method="start"]
