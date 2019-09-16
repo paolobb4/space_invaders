@@ -53,6 +53,7 @@ func projectile_exiting_tree():
 
 func hit():
     queue_free()
+    find_parent("Game").game_over()
 
 
 func _on_enemy_detector_body_entered(body):

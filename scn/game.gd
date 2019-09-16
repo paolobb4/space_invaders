@@ -1,5 +1,7 @@
 extends Spatial
 
+signal game_over
+
 var Wall = preload("res://scn//Wall.tscn")
 
 var waves = [
@@ -53,3 +55,11 @@ func on_projectile_limit_hit(projectile):
 
 func _on_bonus_limit_hit(bonus):
     bonus._on_limit_wall_hit()
+
+
+func game_over():
+    emit_signal("game_over")
+
+
+func _on_enemies_limit_bottom_hit(b):
+    game_over()
