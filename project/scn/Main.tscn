@@ -3,7 +3,7 @@
 [ext_resource path="res://scn/main.gd" type="Script" id=1]
 [ext_resource path="res://scn/Game.tscn" type="PackedScene" id=2]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 resource_name = "controls2options"
 tracks/0/type = "value"
 tracks/0/path = NodePath("controls:visible")
@@ -30,8 +30,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "main2options"
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("main:visible")
@@ -58,7 +57,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "options2controls"
 tracks/0/type = "value"
 tracks/0/path = NodePath("controls:visible")
@@ -85,8 +84,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "options2main"
+[sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("options:visible")
@@ -113,10 +111,10 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0, 0, 0.0745098, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.0941176, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
@@ -132,15 +130,15 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Transition" type="AnimationPlayer" parent="Menu"]
-anims/controls2options = SubResource( 6 )
-anims/main2options = SubResource( 1 )
-anims/options2controls = SubResource( 5 )
-anims/options2main = SubResource( 2 )
+anims/controls2options = SubResource( 1 )
+anims/main2options = SubResource( 2 )
+anims/options2controls = SubResource( 3 )
+anims/options2main = SubResource( 4 )
 
 [node name="main" type="Panel" parent="Menu"]
 margin_right = 1024.0
 margin_bottom = 600.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 5 )
 
 [node name="play" type="Button" parent="Menu/main"]
 margin_left = 440.0
@@ -170,7 +168,7 @@ text = "Quit"
 visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 6 )
 
 [node name="return" type="Button" parent="Menu/options"]
 margin_left = 42.5805

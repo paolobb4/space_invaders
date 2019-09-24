@@ -10,10 +10,10 @@ onready var bonus_scns = {
     }
 
 export var initial_speed = 1.0
-export var max_speed_factor = 1.0
+export var final_speed = 1.0
 
 onready var original_enemies_count = $"wrapper/enemies".get_child_count()
-onready var speed_increment = initial_speed * (max_speed_factor - 1 ) / original_enemies_count
+onready var speed_increment = (final_speed - initial_speed) / original_enemies_count
 
 var direction = "left"
 var next_direction

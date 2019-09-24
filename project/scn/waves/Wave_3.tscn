@@ -69,6 +69,8 @@ tracks/0/keys = {
 
 [node name="Wave" type="Spatial"]
 script = ExtResource( 1 )
+initial_speed = 8.0
+final_speed = 17.0
 
 [node name="bonus_spawn_left" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0 )
