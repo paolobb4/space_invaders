@@ -7,7 +7,7 @@
 resource_name = "move_forward"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("enemies:translation")
+tracks/0/path = NodePath("wapper/enemies:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -23,7 +23,7 @@ tracks/0/keys = {
 resource_name = "move_left"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("enemies:translation")
+tracks/0/path = NodePath("wapper/enemies:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -39,7 +39,7 @@ tracks/0/keys = {
 resource_name = "move_right"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("enemies:translation")
+tracks/0/path = NodePath("wapper/enemies:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -82,71 +82,73 @@ anims/move_left = SubResource( 2 )
 anims/move_right = SubResource( 3 )
 anims/spawn = SubResource( 4 )
 
-[node name="enemies" type="Spatial" parent="."]
+[node name="wapper" type="Spatial" parent="."]
+
+[node name="enemies" type="Spatial" parent="wapper"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25 )
 
-[node name="Enemy65" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy65" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 15 )
 
-[node name="Enemy82" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy82" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 15 )
 
-[node name="Enemy75" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy75" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3 )
 
-[node name="Enemy69" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy69" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 19 )
 
-[node name="Enemy83" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy83" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 19 )
 
-[node name="Enemy76" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy76" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7 )
 
-[node name="Enemy53" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy53" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 23 )
 
-[node name="Enemy78" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy78" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 23 )
 
-[node name="Enemy71" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy71" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11 )
 
-[node name="Enemy64" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy64" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15 )
 
-[node name="Enemy81" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy81" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 15 )
 
-[node name="Enemy74" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy74" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3 )
 
-[node name="Enemy68" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy68" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 15 )
 
-[node name="Enemy77" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy77" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 15 )
 
-[node name="Enemy70" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy70" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 3 )
 
-[node name="Enemy66" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy66" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 15 )
 
-[node name="Enemy79" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy79" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 15 )
 
-[node name="Enemy72" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy72" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3 )
 
-[node name="Enemy67" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy67" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 19 )
 
-[node name="Enemy80" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy80" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 19 )
 
-[node name="Enemy73" parent="enemies" instance=ExtResource( 2 )]
+[node name="Enemy73" parent="wapper/enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
