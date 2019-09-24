@@ -33,3 +33,7 @@ func _on_Play_pressed():
 func _on_game_over():
     $"Game".queue_free()
     $"Menu".show()
+
+
+func quit():
+    get_tree().quit()
