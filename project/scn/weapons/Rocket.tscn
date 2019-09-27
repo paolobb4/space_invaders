@@ -21,7 +21,7 @@ points = PoolVector3Array( -0.25, 0.25, 0.5, 0.25, 0.25, -0.5, 0.25, 0.25, 0.5, 
 collision_layer = 4
 collision_mask = 6151
 script = ExtResource( 1 )
-speed = 25
+speed = 30
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )

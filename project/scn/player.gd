@@ -20,7 +20,7 @@ func _process(delta):
     if Input.is_action_pressed("move_right"):
         move += 1
 
-    if Input.is_action_just_pressed("shoot"):
+    if Input.is_action_pressed("shoot"):
         shoot()
 
     move_and_collide(Vector3(1,0,0) * move * speed * speed_bonus * delta)
@@ -30,8 +30,9 @@ func shoot():
     each time a player projectile exits the tree
     """
    
-    if (ammo):
+    if (ammo and not $"Timer_weapon_cooldown".time_left):
         ammo -= 1
+        $"Timer_weapon_cooldown".start()
 
         var projectile = Laser.instance()
         projectile.translation = $"gun".global_transform.origin
