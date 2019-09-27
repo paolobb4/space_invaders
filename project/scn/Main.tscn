@@ -122,6 +122,10 @@ bg_color = Color( 0.0980392, 0, 0.0745098, 1 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="Game" parent="." instance=ExtResource( 2 )]
 
@@ -141,9 +145,9 @@ margin_bottom = 600.0
 custom_styles/panel = SubResource( 5 )
 
 [node name="play" type="Button" parent="Menu/main"]
-margin_left = 440.0
+margin_left = 390.0
 margin_top = 150.0
-margin_right = 478.0
+margin_right = 453.0
 margin_bottom = 170.0
 rect_scale = Vector2( 4, 4 )
 text = "Play"

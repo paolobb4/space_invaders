@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scn/waves/wave.gd" type="Script" id=1]
-[ext_resource path="res://scn/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scn/enemies/Enemy01.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "move_forward"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("wrapper/enemies:translation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -24,7 +24,7 @@ resource_name = "move_left"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("wrapper/enemies:translation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -40,7 +40,7 @@ resource_name = "move_right"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("wrapper/enemies:translation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -56,7 +56,7 @@ resource_name = "spawn"
 length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -89,122 +89,160 @@ anims/spawn = SubResource( 4 )
 [node name="enemies" type="Spatial" parent="wrapper"]
 editor/display_folded = true
 
-[node name="Enemy57" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 3 )
+[node name="Enemy" parent="wrapper/enemies" instance=ExtResource( 2 )]
 
-[node name="Enemy73" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3 )
+[node name="Enemy21" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
 
-[node name="Enemy58" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 3 )
+[node name="Enemy28" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8 )
 
-[node name="Enemy80" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3 )
+[node name="Enemy39" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12 )
 
-[node name="Enemy59" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 3 )
+[node name="Enemy6" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0 )
 
-[node name="Enemy74" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 3 )
+[node name="Enemy22" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4 )
 
-[node name="Enemy60" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 3 )
+[node name="Enemy29" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 8 )
 
-[node name="Enemy76" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 3 )
+[node name="Enemy40" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 12 )
 
-[node name="Enemy61" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3 )
+[node name="Enemy9" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0 )
 
-[node name="Enemy64" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 3 )
+[node name="Enemy17" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4 )
 
-[node name="Enemy62" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3 )
+[node name="Enemy25" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8 )
 
-[node name="Enemy79" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 3 )
+[node name="Enemy37" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12 )
 
-[node name="Enemy63" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+[node name="Enemy2" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
 
-[node name="Enemy65" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 11 )
+[node name="Enemy18" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4 )
 
-[node name="Enemy82" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 11 )
+[node name="Enemy33" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8 )
 
-[node name="Enemy66" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 11 )
+[node name="Enemy44" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 12 )
 
-[node name="Enemy83" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 11 )
+[node name="Enemy4" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0 )
 
-[node name="Enemy67" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 11 )
+[node name="Enemy14" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 4 )
 
-[node name="Enemy78" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 11 )
+[node name="Enemy32" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 8 )
 
-[node name="Enemy68" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 11 )
+[node name="Enemy43" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 12 )
 
-[node name="Enemy85" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 11 )
-
-[node name="Enemy69" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 11 )
-
-[node name="Enemy75" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 11 )
-
-[node name="Enemy70" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 11 )
-
-[node name="Enemy72" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 11 )
-
-[node name="Enemy71" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11 )
-
-[node name="Enemy48" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 7 )
-
-[node name="Enemy55" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7 )
-
-[node name="Enemy49" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 7 )
-
-[node name="Enemy56" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7 )
+[node name="Enemy10" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0 )
 
 [node name="Enemy50" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0 )
 
-[node name="Enemy84" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 7 )
+[node name="Enemy16" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 4 )
 
-[node name="Enemy51" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 7 )
+[node name="Enemy49" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 4 )
 
-[node name="Enemy77" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 7 )
+[node name="Enemy27" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 8 )
 
 [node name="Enemy52" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 8 )
 
-[node name="Enemy81" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 7 )
+[node name="Enemy38" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 12 )
 
-[node name="Enemy53" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 7 )
+[node name="Enemy51" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 12 )
 
-[node name="Enemy86" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 7 )
+[node name="Enemy8" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0 )
 
-[node name="Enemy54" parent="wrapper/enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
+[node name="Enemy19" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4 )
+
+[node name="Enemy23" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8 )
+
+[node name="Enemy35" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12 )
+
+[node name="Enemy3" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
+
+[node name="Enemy20" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
+
+[node name="Enemy24" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8 )
+
+[node name="Enemy36" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12 )
+
+[node name="Enemy5" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
+
+[node name="Enemy12" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4 )
+
+[node name="Enemy31" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8 )
+
+[node name="Enemy42" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 12 )
+
+[node name="Enemy7" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0 )
+
+[node name="Enemy13" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4 )
+
+[node name="Enemy30" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 8 )
+
+[node name="Enemy41" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 12 )
+
+[node name="Enemy11" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0 )
+
+[node name="Enemy47" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+
+[node name="Enemy15" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4 )
+
+[node name="Enemy45" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 4 )
+
+[node name="Enemy26" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 8 )
+
+[node name="Enemy46" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 8 )
+
+[node name="Enemy34" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 12 )
+
+[node name="Enemy48" parent="wrapper/enemies" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 12 )
 
 [node name="add_bonus1" type="Timer" parent="."]
 wait_time = 10.0
@@ -228,12 +266,12 @@ wait_time = 10.0
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
-[connection signal="timeout" from="add_bonus1" to="add_bonus2" method="start"]
 [connection signal="timeout" from="add_bonus1" to="." method="spawnBonus" binds= [ "DoubleShot", "left" ]]
-[connection signal="timeout" from="add_bonus2" to="add_bonus3" method="start"]
+[connection signal="timeout" from="add_bonus1" to="add_bonus2" method="start"]
 [connection signal="timeout" from="add_bonus2" to="." method="spawnBonus" binds= [ "Speed", "right" ]]
-[connection signal="timeout" from="add_bonus3" to="add_bonus4" method="start"]
+[connection signal="timeout" from="add_bonus2" to="add_bonus3" method="start"]
 [connection signal="timeout" from="add_bonus3" to="." method="spawnBonus" binds= [ "Shield", "left" ]]
-[connection signal="timeout" from="add_bonus4" to="bonus_idle" method="start"]
+[connection signal="timeout" from="add_bonus3" to="add_bonus4" method="start"]
 [connection signal="timeout" from="add_bonus4" to="." method="spawnBonus" binds= [ "RegenWalls", "right" ]]
+[connection signal="timeout" from="add_bonus4" to="bonus_idle" method="start"]
 [connection signal="timeout" from="bonus_idle" to="add_bonus1" method="start"]
