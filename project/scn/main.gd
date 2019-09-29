@@ -20,6 +20,9 @@ func _process(delta):
 
     if Input.is_action_just_pressed("close_game"):
         get_tree().quit()
+    if Input.is_action_just_pressed("ui_accept"):
+        if (not $"Game"):
+            _on_Play_pressed()  
 
 
 func _on_Play_pressed():
